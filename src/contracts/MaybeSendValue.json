@@ -1,0 +1,1054 @@
+{
+  "contractName": "MaybeSendValue",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "SendValueProxyInitialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"SendValueProxyInitialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/MaybeSendValue.sol\":\"MaybeSendValue\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/ISendValueProxy.sol\":{\"keccak256\":\"0x82cafabc426f2a80133a8f857cd2c86c01336aa3e11f18e8ea2ed75b9a8ab00d\",\"urls\":[\"bzz-raw://daee5ed8b465d4099b13c3f2fc8b3431a10943d790d23ad2abf528348c898cb8\",\"dweb:/ipfs/Qmbvi4mD5y3FJDDyP62G89XFxLgczpJQ94UKzGQzszFtm5\"]},\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/MaybeSendValue.sol\":{\"keccak256\":\"0x2aab8d907678b603820ad6aefb95f4bfd89a5eca264ca0c47ee349128a0feb79\",\"urls\":[\"bzz-raw://210e592cf66bd7d3c9afe9de2b3199097334c150fd1c39030a6b609de5065a3a\",\"dweb:/ipfs/QmacQSjJU8YHZJXyD93qvY9p949pJ7AbvXgfxcQCK5X3k8\"]},\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol\":{\"keccak256\":\"0x0fbe48a525bc57d040970f138fc610ced1c8a0181027a6fc9d89613a7aff25b3\",\"urls\":[\"bzz-raw://bc8c4f4e1b1556b0198e1ed3cde5b6bba75b968eeb10458bedf8af5e8a2920ee\",\"dweb:/ipfs/QmVw2Pnh3fCfxZDviifejiRPGKLxSnbtsPFFAM3374UQti\"]},\"@openzeppelin/contracts-upgradeable/proxy/Initializable.sol\":{\"keccak256\":\"0xd8e4eb08dcc1d1860fb347ba5ffd595242b9a1b66d49a47f2b4cb51c3f35017e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7dbc89479d30592e82442edc38053b380f611037a5e6ceafc7bf57a7aa1f0305\",\"dweb:/ipfs/QmcdYtt56WmjeYvsFjK69FnahnAriw88VzY3XRZwXkQKKN\"]},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0xfc5ea91fa9ceb1961023b2a6c978b902888c52b90847ac7813fe3b79524165f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6b81dcc816857a9d981386f6d8de49198420ee41cdc0ecade366ab412174d03\",\"dweb:/ipfs/QmV2vznMT6m9qo3pFMAWi3Nz3UDhwesgwFxeXe6Tod3v8A\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610336806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063f4f75dd814610030575b600080fd5b61003861003a565b005b600060019054906101000a900460ff168061005957506100586101a1565b5b8061006f575060008054906101000a900460ff16155b6100c4576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602e8152602001806102d3602e913960400191505060405180910390fd5b60008060019054906101000a900460ff161590508015610114576001600060016101000a81548160ff02191690831515021790555060016000806101000a81548160ff0219169083151502179055505b604051610120906101c5565b604051809103906000f08015801561013c573d6000803e3d6000fd5b50600060026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550801561019e5760008060016101000a81548160ff0219169083151502179055505b50565b60006101ac306101b2565b15905090565b600080823b905060008111915050919050565b610100806101d38339019056fe608060405234801561001057600080fd5b5060e18061001f6000396000f3fe608060405260043610601c5760003560e01c80637d286e48146021575b600080fd5b606060048036036020811015603557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506062565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801560a7573d6000803e3d6000fd5b505056fea26469706673582212201c4aabc2e89f52a625592d2b04fb201fce49d5a2f68db45b86e0682342e5171f64736f6c634300060c0033496e697469616c697a61626c653a20636f6e747261637420697320616c726561647920696e697469616c697a6564a26469706673582212206192ae80db11bacffc969d63f853dde0d770d7d644e45be13653716a09c950f564736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063f4f75dd814610030575b600080fd5b61003861003a565b005b600060019054906101000a900460ff168061005957506100586101a1565b5b8061006f575060008054906101000a900460ff16155b6100c4576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602e8152602001806102d3602e913960400191505060405180910390fd5b60008060019054906101000a900460ff161590508015610114576001600060016101000a81548160ff02191690831515021790555060016000806101000a81548160ff0219169083151502179055505b604051610120906101c5565b604051809103906000f08015801561013c573d6000803e3d6000fd5b50600060026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550801561019e5760008060016101000a81548160ff0219169083151502179055505b50565b60006101ac306101b2565b15905090565b600080823b905060008111915050919050565b610100806101d38339019056fe608060405234801561001057600080fd5b5060e18061001f6000396000f3fe608060405260043610601c5760003560e01c80637d286e48146021575b600080fd5b606060048036036020811015603557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506062565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801560a7573d6000803e3d6000fd5b505056fea26469706673582212201c4aabc2e89f52a625592d2b04fb201fce49d5a2f68db45b86e0682342e5171f64736f6c634300060c0033496e697469616c697a61626c653a20636f6e747261637420697320616c726561647920696e697469616c697a6564a26469706673582212206192ae80db11bacffc969d63f853dde0d770d7d644e45be13653716a09c950f564736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "234:1500:7:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "234:1500:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;392:100;;;:::i;:::-;;;1512:13:29;;;;;;;;;;;:33;;;;1529:16;:14;:16::i;:::-;1512:33;:50;;;;1550:12;;;;;;;;;;1549:13;1512:50;1504:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1624:19;1647:13;;;;;;;;;;;1646:14;1624:36;;1674:14;1670:98;;;1720:4;1704:13;;:20;;;;;;;;;;;;;;;;;;1753:4;1738:12;;:19;;;;;;;;;;;;;;;;;;1670:98;465:20:7::1;;;;;:::i;:::-;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;457:5;;:28;;;;;;;;;;;;;;;;;;1794:14:29::0;1790:66;;;1840:5;1824:13;;:21;;;;;;;;;;;;;;;;;;1790:66;392:100:7;:::o;1952:123:29:-;2000:4;2024:44;2062:4;2024:29;:44::i;:::-;2023:45;2016:52;;1952:123;:::o;737:413:35:-;797:4;1000:12;1109:7;1097:20;1089:28;;1142:1;1135:4;:8;1128:15;;;737:413;;;:::o;-1:-1:-1:-;;;;;;;;:::o",
+  "source": "pragma solidity 0.6.12;\n\nimport '@openzeppelin/contracts-upgradeable/proxy/Initializable.sol';\nimport \"./SendValueProxy.sol\";\n\n/**\n * @dev Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds.\n */\ncontract MaybeSendValue is Initializable {\n    SendValueProxy proxy;\n\n    // constructor() internal {\n    //     proxy = new SendValueProxy();\n    // }\n\n     function SendValueProxyInitialize() public initializer {\n        proxy = new SendValueProxy();\n    }\n\n    /**\n     * @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n     * @param _to address to send some value to.\n     * @param _value uint256 amount to send.\n     */\n    // function maybeSendValue(address payable _to, uint256 _value)\n    //     internal\n    //     returns (bool)\n    // {\n    //     // Call sendValue on the proxy contract and forward the mesg.value.\n    //     /* solium-disable-next-line */\n    //     // (bool success, bytes memory _) = address(proxy).call.value(_value)(\n    //     //     abi.encodeWithSignature(\"sendValue(address)\", _to)\n    //     // );\n    //     (bool success, bytes memory _) = address(proxy).call{value:(_value)}(\n    //         abi.encodeWithSignature(\"sendValue(address)\", _to)\n    //     );\n    //     return success;\n    // }\n    \n    /**\n     * @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n     * @param _to address to send some value to.\n     * @param _value uint256 amount to send.\n     */\n    function maybeSendValue(address payable _to, uint256 _value)\n        internal\n        returns (bool)\n    {\n\n        _to.transfer(_value);\n        \n        return true;\n    }\n\n}\n",
+  "sourcePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/MaybeSendValue.sol",
+  "ast": {
+    "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/MaybeSendValue.sol",
+    "exportedSymbols": {
+      "MaybeSendValue": [
+        659
+      ]
+    },
+    "id": 660,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 620,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol",
+        "id": 621,
+        "nodeType": "ImportDirective",
+        "scope": 660,
+        "sourceUnit": 6690,
+        "src": "25:69:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol",
+        "file": "./SendValueProxy.sol",
+        "id": 622,
+        "nodeType": "ImportDirective",
+        "scope": 660,
+        "sourceUnit": 1318,
+        "src": "95:30:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 624,
+              "name": "Initializable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6689,
+              "src": "261:13:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Initializable_$6689",
+                "typeString": "contract Initializable"
+              }
+            },
+            "id": 625,
+            "nodeType": "InheritanceSpecifier",
+            "src": "261:13:7"
+          }
+        ],
+        "contractDependencies": [
+          1317,
+          6689
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 623,
+          "nodeType": "StructuredDocumentation",
+          "src": "127:106:7",
+          "text": " @dev Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds."
+        },
+        "fullyImplemented": true,
+        "id": 659,
+        "linearizedBaseContracts": [
+          659,
+          6689
+        ],
+        "name": "MaybeSendValue",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 627,
+            "mutability": "mutable",
+            "name": "proxy",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 659,
+            "src": "281:20:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SendValueProxy_$1317",
+              "typeString": "contract SendValueProxy"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 626,
+              "name": "SendValueProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1317,
+              "src": "281:14:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SendValueProxy_$1317",
+                "typeString": "contract SendValueProxy"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 638,
+              "nodeType": "Block",
+              "src": "447:45:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 636,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 632,
+                      "name": "proxy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 627,
+                      "src": "457:5:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SendValueProxy_$1317",
+                        "typeString": "contract SendValueProxy"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 634,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "465:18:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_SendValueProxy_$1317_$",
+                          "typeString": "function () returns (contract SendValueProxy)"
+                        },
+                        "typeName": {
+                          "contractScope": null,
+                          "id": 633,
+                          "name": "SendValueProxy",
+                          "nodeType": "UserDefinedTypeName",
+                          "referencedDeclaration": 1317,
+                          "src": "469:14:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_SendValueProxy_$1317",
+                            "typeString": "contract SendValueProxy"
+                          }
+                        }
+                      },
+                      "id": 635,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "465:20:7",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SendValueProxy_$1317",
+                        "typeString": "contract SendValueProxy"
+                      }
+                    },
+                    "src": "457:28:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SendValueProxy_$1317",
+                      "typeString": "contract SendValueProxy"
+                    }
+                  },
+                  "id": 637,
+                  "nodeType": "ExpressionStatement",
+                  "src": "457:28:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "f4f75dd8",
+            "id": 639,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 630,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 629,
+                  "name": "initializer",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 6672,
+                  "src": "435:11:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "435:11:7"
+              }
+            ],
+            "name": "SendValueProxyInitialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 628,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "425:2:7"
+            },
+            "returnParameters": {
+              "id": 631,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "447:0:7"
+            },
+            "scope": 659,
+            "src": "392:100:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 657,
+              "nodeType": "Block",
+              "src": "1663:68:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 652,
+                        "name": "_value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 644,
+                        "src": "1687:6:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 649,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 642,
+                        "src": "1674:3:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 651,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1674:12:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 653,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1674:20:7",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 654,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1674:20:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 655,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1720:4:7",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 648,
+                  "id": 656,
+                  "nodeType": "Return",
+                  "src": "1713:11:7"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 640,
+              "nodeType": "StructuredDocumentation",
+              "src": "1335:218:7",
+              "text": " @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n @param _to address to send some value to.\n @param _value uint256 amount to send."
+            },
+            "id": 658,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "maybeSendValue",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 642,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 658,
+                  "src": "1582:19:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 641,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1582:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 644,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 658,
+                  "src": "1603:14:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 643,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1603:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1581:37:7"
+            },
+            "returnParameters": {
+              "id": 648,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 647,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 658,
+                  "src": "1653:4:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 646,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1653:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1652:6:7"
+            },
+            "scope": 659,
+            "src": "1558:173:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 660,
+        "src": "234:1500:7"
+      }
+    ],
+    "src": "0:1735:7"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/MaybeSendValue.sol",
+      "exportedSymbols": {
+        "MaybeSendValue": [
+          659
+        ]
+      },
+      "license": null
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 620,
+        "name": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 6690,
+          "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol",
+          "file": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol",
+          "scope": 660,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 621,
+        "name": "ImportDirective",
+        "src": "25:69:7"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1318,
+          "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol",
+          "file": "./SendValueProxy.sol",
+          "scope": 660,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 622,
+        "name": "ImportDirective",
+        "src": "95:30:7"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            1317,
+            6689
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            659,
+            6689
+          ],
+          "name": "MaybeSendValue",
+          "scope": 660
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @dev Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds."
+            },
+            "id": 623,
+            "name": "StructuredDocumentation",
+            "src": "127:106:7"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Initializable",
+                  "referencedDeclaration": 6689,
+                  "type": "contract Initializable"
+                },
+                "id": 624,
+                "name": "UserDefinedTypeName",
+                "src": "261:13:7"
+              }
+            ],
+            "id": 625,
+            "name": "InheritanceSpecifier",
+            "src": "261:13:7"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "proxy",
+              "overrides": null,
+              "scope": 659,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract SendValueProxy",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SendValueProxy",
+                  "referencedDeclaration": 1317,
+                  "type": "contract SendValueProxy"
+                },
+                "id": 626,
+                "name": "UserDefinedTypeName",
+                "src": "281:14:7"
+              }
+            ],
+            "id": 627,
+            "name": "VariableDeclaration",
+            "src": "281:20:7"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "f4f75dd8",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "SendValueProxyInitialize",
+              "overrides": null,
+              "scope": 659,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 628,
+                "name": "ParameterList",
+                "src": "425:2:7"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 631,
+                "name": "ParameterList",
+                "src": "447:0:7"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 6672,
+                      "type": "modifier ()",
+                      "value": "initializer"
+                    },
+                    "id": 629,
+                    "name": "Identifier",
+                    "src": "435:11:7"
+                  }
+                ],
+                "id": 630,
+                "name": "ModifierInvocation",
+                "src": "435:11:7"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract SendValueProxy"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 627,
+                              "type": "contract SendValueProxy",
+                              "value": "proxy"
+                            },
+                            "id": 632,
+                            "name": "Identifier",
+                            "src": "457:5:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract SendValueProxy",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "function () returns (contract SendValueProxy)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "contractScope": null,
+                                      "name": "SendValueProxy",
+                                      "referencedDeclaration": 1317,
+                                      "type": "contract SendValueProxy"
+                                    },
+                                    "id": 633,
+                                    "name": "UserDefinedTypeName",
+                                    "src": "469:14:7"
+                                  }
+                                ],
+                                "id": 634,
+                                "name": "NewExpression",
+                                "src": "465:18:7"
+                              }
+                            ],
+                            "id": 635,
+                            "name": "FunctionCall",
+                            "src": "465:20:7"
+                          }
+                        ],
+                        "id": 636,
+                        "name": "Assignment",
+                        "src": "457:28:7"
+                      }
+                    ],
+                    "id": 637,
+                    "name": "ExpressionStatement",
+                    "src": "457:28:7"
+                  }
+                ],
+                "id": 638,
+                "name": "Block",
+                "src": "447:45:7"
+              }
+            ],
+            "id": 639,
+            "name": "FunctionDefinition",
+            "src": "392:100:7"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "maybeSendValue",
+              "overrides": null,
+              "scope": 659,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Maybe send some wei to the address via a proxy. Returns true on success and false if transfer fails.\n @param _to address to send some value to.\n @param _value uint256 amount to send."
+                },
+                "id": 640,
+                "name": "StructuredDocumentation",
+                "src": "1335:218:7"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_to",
+                      "overrides": null,
+                      "scope": 658,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address payable",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "payable",
+                          "type": "address payable"
+                        },
+                        "id": 641,
+                        "name": "ElementaryTypeName",
+                        "src": "1582:15:7"
+                      }
+                    ],
+                    "id": 642,
+                    "name": "VariableDeclaration",
+                    "src": "1582:19:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_value",
+                      "overrides": null,
+                      "scope": 658,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 643,
+                        "name": "ElementaryTypeName",
+                        "src": "1603:7:7"
+                      }
+                    ],
+                    "id": 644,
+                    "name": "VariableDeclaration",
+                    "src": "1603:14:7"
+                  }
+                ],
+                "id": 645,
+                "name": "ParameterList",
+                "src": "1581:37:7"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 658,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 646,
+                        "name": "ElementaryTypeName",
+                        "src": "1653:4:7"
+                      }
+                    ],
+                    "id": 647,
+                    "name": "VariableDeclaration",
+                    "src": "1653:4:7"
+                  }
+                ],
+                "id": 648,
+                "name": "ParameterList",
+                "src": "1652:6:7"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transfer",
+                              "referencedDeclaration": null,
+                              "type": "function (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 642,
+                                  "type": "address payable",
+                                  "value": "_to"
+                                },
+                                "id": 649,
+                                "name": "Identifier",
+                                "src": "1674:3:7"
+                              }
+                            ],
+                            "id": 651,
+                            "name": "MemberAccess",
+                            "src": "1674:12:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 644,
+                              "type": "uint256",
+                              "value": "_value"
+                            },
+                            "id": 652,
+                            "name": "Identifier",
+                            "src": "1687:6:7"
+                          }
+                        ],
+                        "id": 653,
+                        "name": "FunctionCall",
+                        "src": "1674:20:7"
+                      }
+                    ],
+                    "id": 654,
+                    "name": "ExpressionStatement",
+                    "src": "1674:20:7"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 648
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 655,
+                        "name": "Literal",
+                        "src": "1720:4:7"
+                      }
+                    ],
+                    "id": 656,
+                    "name": "Return",
+                    "src": "1713:11:7"
+                  }
+                ],
+                "id": 657,
+                "name": "Block",
+                "src": "1663:68:7"
+              }
+            ],
+            "id": 658,
+            "name": "FunctionDefinition",
+            "src": "1558:173:7"
+          }
+        ],
+        "id": 659,
+        "name": "ContractDefinition",
+        "src": "234:1500:7"
+      }
+    ],
+    "id": 660,
+    "name": "SourceUnit",
+    "src": "0:1735:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-05-10T10:04:18.355Z",
+  "devdoc": {
+    "details": "Contract with a ISendValueProxy that will catch reverts when attempting to transfer funds.",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

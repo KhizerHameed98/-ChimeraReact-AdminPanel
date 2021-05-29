@@ -1,0 +1,580 @@
+{
+  "contractName": "SendValueProxy",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "sendValue",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"sendValue\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Contract that attempts to send value to an address.\",\"kind\":\"dev\",\"methods\":{\"sendValue(address)\":{\"details\":\"Send some wei to the address.\",\"params\":{\"_to\":\"address to send some value to.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol\":\"SendValueProxy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/ISendValueProxy.sol\":{\"keccak256\":\"0x82cafabc426f2a80133a8f857cd2c86c01336aa3e11f18e8ea2ed75b9a8ab00d\",\"urls\":[\"bzz-raw://daee5ed8b465d4099b13c3f2fc8b3431a10943d790d23ad2abf528348c898cb8\",\"dweb:/ipfs/Qmbvi4mD5y3FJDDyP62G89XFxLgczpJQ94UKzGQzszFtm5\"]},\"/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol\":{\"keccak256\":\"0x0fbe48a525bc57d040970f138fc610ced1c8a0181027a6fc9d89613a7aff25b3\",\"urls\":[\"bzz-raw://bc8c4f4e1b1556b0198e1ed3cde5b6bba75b968eeb10458bedf8af5e8a2920ee\",\"dweb:/ipfs/QmVw2Pnh3fCfxZDviifejiRPGKLxSnbtsPFFAM3374UQti\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060e18061001f6000396000f3fe608060405260043610601c5760003560e01c80637d286e48146021575b600080fd5b606060048036036020811015603557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506062565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801560a7573d6000803e3d6000fd5b505056fea26469706673582212201c4aabc2e89f52a625592d2b04fb201fce49d5a2f68db45b86e0682342e5171f64736f6c634300060c0033",
+  "deployedBytecode": "0x608060405260043610601c5760003560e01c80637d286e48146021575b600080fd5b606060048036036020811015603557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506062565b005b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f1935050505015801560a7573d6000803e3d6000fd5b505056fea26469706673582212201c4aabc2e89f52a625592d2b04fb201fce49d5a2f68db45b86e0682342e5171f64736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "126:408:11:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "126:408:11:-:0;;;;;;;;;;;;;;;;;;;;;282:250;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;502:3;:12;;:23;515:9;502:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;282:250;:::o",
+  "source": "pragma solidity 0.6.12;\n\nimport \"./ISendValueProxy.sol\";\n\n/**\n * @dev Contract that attempts to send value to an address.\n */\ncontract SendValueProxy is ISendValueProxy {\n    /**\n     * @dev Send some wei to the address.\n     * @param _to address to send some value to.\n     */\n    function sendValue(address payable _to) external override payable {\n        // Note that `<address>.transfer` limits gas sent to receiver. It may\n        // not support complex contract operations in the future.\n        _to.transfer(msg.value);\n    }\n}\n",
+  "sourcePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol",
+  "ast": {
+    "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol",
+    "exportedSymbols": {
+      "SendValueProxy": [
+        1317
+      ]
+    },
+    "id": 1318,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1297,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:11"
+      },
+      {
+        "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/ISendValueProxy.sol",
+        "file": "./ISendValueProxy.sol",
+        "id": 1298,
+        "nodeType": "ImportDirective",
+        "scope": 1318,
+        "sourceUnit": 149,
+        "src": "25:31:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1300,
+              "name": "ISendValueProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 148,
+              "src": "153:15:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISendValueProxy_$148",
+                "typeString": "contract ISendValueProxy"
+              }
+            },
+            "id": 1301,
+            "nodeType": "InheritanceSpecifier",
+            "src": "153:15:11"
+          }
+        ],
+        "contractDependencies": [
+          148
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1299,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:67:11",
+          "text": " @dev Contract that attempts to send value to an address."
+        },
+        "fullyImplemented": true,
+        "id": 1317,
+        "linearizedBaseContracts": [
+          1317,
+          148
+        ],
+        "name": "SendValueProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              147
+            ],
+            "body": {
+              "id": 1315,
+              "nodeType": "Block",
+              "src": "348:184:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1311,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "515:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1312,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "515:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1308,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1304,
+                        "src": "502:3:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 1310,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "502:12:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 1313,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "502:23:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1314,
+                  "nodeType": "ExpressionStatement",
+                  "src": "502:23:11"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1302,
+              "nodeType": "StructuredDocumentation",
+              "src": "175:102:11",
+              "text": " @dev Send some wei to the address.\n @param _to address to send some value to."
+            },
+            "functionSelector": "7d286e48",
+            "id": 1316,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sendValue",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1306,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "331:8:11"
+            },
+            "parameters": {
+              "id": 1305,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1304,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1316,
+                  "src": "301:19:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1303,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "301:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "300:21:11"
+            },
+            "returnParameters": {
+              "id": 1307,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "348:0:11"
+            },
+            "scope": 1317,
+            "src": "282:250:11",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1318,
+        "src": "126:408:11"
+      }
+    ],
+    "src": "0:535:11"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/SendValueProxy.sol",
+      "exportedSymbols": {
+        "SendValueProxy": [
+          1317
+        ]
+      },
+      "license": null
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 1297,
+        "name": "PragmaDirective",
+        "src": "0:23:11"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 149,
+          "absolutePath": "/home/khizer/Documents/AllData/chimera-react-frontend/ChimeraContracts/contracts/ISendValueProxy.sol",
+          "file": "./ISendValueProxy.sol",
+          "scope": 1318,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1298,
+        "name": "ImportDirective",
+        "src": "25:31:11"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            148
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1317,
+            148
+          ],
+          "name": "SendValueProxy",
+          "scope": 1318
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " @dev Contract that attempts to send value to an address."
+            },
+            "id": 1299,
+            "name": "StructuredDocumentation",
+            "src": "58:67:11"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ISendValueProxy",
+                  "referencedDeclaration": 148,
+                  "type": "contract ISendValueProxy"
+                },
+                "id": 1300,
+                "name": "UserDefinedTypeName",
+                "src": "153:15:11"
+              }
+            ],
+            "id": 1301,
+            "name": "InheritanceSpecifier",
+            "src": "153:15:11"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                147
+              ],
+              "functionSelector": "7d286e48",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "sendValue",
+              "scope": 1317,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " @dev Send some wei to the address.\n @param _to address to send some value to."
+                },
+                "id": 1302,
+                "name": "StructuredDocumentation",
+                "src": "175:102:11"
+              },
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 1306,
+                "name": "OverrideSpecifier",
+                "src": "331:8:11"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_to",
+                      "overrides": null,
+                      "scope": 1316,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address payable",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "payable",
+                          "type": "address payable"
+                        },
+                        "id": 1303,
+                        "name": "ElementaryTypeName",
+                        "src": "301:15:11"
+                      }
+                    ],
+                    "id": 1304,
+                    "name": "VariableDeclaration",
+                    "src": "301:19:11"
+                  }
+                ],
+                "id": 1305,
+                "name": "ParameterList",
+                "src": "300:21:11"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1307,
+                "name": "ParameterList",
+                "src": "348:0:11"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transfer",
+                              "referencedDeclaration": null,
+                              "type": "function (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1304,
+                                  "type": "address payable",
+                                  "value": "_to"
+                                },
+                                "id": 1308,
+                                "name": "Identifier",
+                                "src": "502:3:11"
+                              }
+                            ],
+                            "id": 1310,
+                            "name": "MemberAccess",
+                            "src": "502:12:11"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "value",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -15,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 1311,
+                                "name": "Identifier",
+                                "src": "515:3:11"
+                              }
+                            ],
+                            "id": 1312,
+                            "name": "MemberAccess",
+                            "src": "515:9:11"
+                          }
+                        ],
+                        "id": 1313,
+                        "name": "FunctionCall",
+                        "src": "502:23:11"
+                      }
+                    ],
+                    "id": 1314,
+                    "name": "ExpressionStatement",
+                    "src": "502:23:11"
+                  }
+                ],
+                "id": 1315,
+                "name": "Block",
+                "src": "348:184:11"
+              }
+            ],
+            "id": 1316,
+            "name": "FunctionDefinition",
+            "src": "282:250:11"
+          }
+        ],
+        "id": 1317,
+        "name": "ContractDefinition",
+        "src": "126:408:11"
+      }
+    ],
+    "id": 1318,
+    "name": "SourceUnit",
+    "src": "0:535:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-05-10T10:04:18.371Z",
+  "devdoc": {
+    "details": "Contract that attempts to send value to an address.",
+    "kind": "dev",
+    "methods": {
+      "sendValue(address)": {
+        "details": "Send some wei to the address.",
+        "params": {
+          "_to": "address to send some value to."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
