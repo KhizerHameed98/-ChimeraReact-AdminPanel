@@ -45,7 +45,8 @@ export default function Admin() {
   }, [window.ethereum]);
   const metamaskConnect = async () => {
     if (!window.ethereum) {
-      alert("metamask not installed!!!!");
+      await alert("metamask not installed!!!!");
+      window.location.reload();
     } else {
       web3 = new Web3(window.ethereum);
       accounts = await web3.eth.getAccounts();
@@ -92,13 +93,13 @@ export default function Admin() {
               exact
               component={ArtistApprovals}
             />
-            <Route path="/admin/artist-edit" exact component={ArtistEdit} />
+            <Route path="/admin/artist-edit/:id" component={ArtistEdit} />
 
             <Route path="/admin/settings" exact component={Settings} />
             <Route path="/admin/tables" exact component={Tables} />
             <Redirect from="/admin" to="/admin/artists" />
           </Switch>
-          <FooterAdmin />
+          {/* <FooterAdmin /> */}
         </div>
       </div>
     </>

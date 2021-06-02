@@ -3,6 +3,14 @@ import { createPopper } from "@popperjs/core";
 import Web3 from "web3";
 import config from "../../config";
 import Swal from "sweetalert2";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 const chimeraContract = require("../../contracts/Chimera.json");
 let chimera, web3, accounts;
 const NotificationDropdown = (props) => {
@@ -10,6 +18,9 @@ const NotificationDropdown = (props) => {
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
       placement: "left-start",
@@ -19,12 +30,16 @@ const NotificationDropdown = (props) => {
   const closeDropdownPopover = () => {
     setDropdownPopoverShow(false);
   };
-  const setEdit = () => {
-    props.editClick();
+
+  const handleClickOpen = (e) => {
+    e.preventDefault();
+    setOpen(true);
   };
-  const handleClickOpen = () => {
-    props.clickOpen();
+
+  const handleClose = () => {
+    setOpen(false);
   };
+
   const whiteListUser = async () => {
     if (!window.ethereum) {
       alert("Please Install MeatMask for this functionality!!");
@@ -87,7 +102,35 @@ const NotificationDropdown = (props) => {
         >
           View
         </a>
-        <a
+        <div>
+          <Dialog
+            fullScreen={fullScreen}
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="responsive-dialog-title"
+          >
+            <DialogTitle id="responsive-dialog-title">
+              {"Artist Details"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                <div>
+                  <ul className="d-flex flex-col">
+                    <li>Name : {props.Name}</li>
+                    <li>Email: {props.Email}</li>
+                    <li>Wallet Address : {props.address}</li>
+                  </ul>
+                </div>
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button autoFocus onClick={handleClose} color="primary">
+                Ok
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
+        {/* <a
           href="artist-edit"
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
@@ -95,7 +138,7 @@ const NotificationDropdown = (props) => {
           onClick={setEdit}
         >
           Edit
-        </a>
+        </a> */}
         {!props.whiteListedOrNot ? (
           <>
             <a

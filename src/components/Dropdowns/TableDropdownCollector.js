@@ -4,7 +4,7 @@ import Web3 from "web3";
 import config from "../../config";
 import Swal from "sweetalert2";
 const chimeraContract = require("../../contracts/Chimera.json");
-const SMAV2Contract = require("../../contracts/SuperRareMarketAuctionV2.json");
+const SMAV2Contract = require("../../contracts/ChimeraMarketAuctionV2.json");
 
 let SMAV2, web3, accounts;
 const NotificationDropdown = (props) => {

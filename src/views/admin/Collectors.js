@@ -15,7 +15,7 @@ import Web3 from "web3";
 import axios from "axios";
 
 const chimeraContract = require("../../contracts/Chimera.json");
-const SMAV2Contract = require("../../contracts/SuperRareMarketAuctionV2.json");
+const SMAV2Contract = require("../../contracts/ChimeraMarketAuctionV2.json");
 
 let web3, accounts, SMAV2;
 let AllData = [];
@@ -80,6 +80,9 @@ export default function Collectors() {
             }
           }
           Promise.all([promiseArr, whiteListedOrNot]).then((response) => {
+            if (response[0].length === 0) {
+              setNoData(true);
+            }
             AllData.userData = response[0];
             AllData.whiteListedOrNot = response[1];
 
@@ -180,16 +183,6 @@ export default function Collectors() {
                         <th
                           className={
                             "px-6 align-middle border text-center border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
-                          }
-                        ></th>
-                        <th
-                          className={
-                            "px-6 align-middle border text-center border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
-                          }
-                        ></th>
-                        <th
-                          className={
-                            "px-6 align-middle text-center border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
                           }
                         ></th>
                       </tr>

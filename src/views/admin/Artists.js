@@ -91,6 +91,9 @@ export default function Artists() {
           }
           Promise.all([promiseArr, whiteListedOrNot, noOfNft]).then(
             (response) => {
+              if (response[0].length === 0) {
+                setNoData(true);
+              }
               AllData.userData = response[0];
               AllData.whiteListedOrNot = response[1];
 
@@ -195,16 +198,6 @@ export default function Artists() {
                             "px-6 align-middle border text-center border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
                           }
                         ></th>
-                        <th
-                          className={
-                            "px-6 align-middle border text-center border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
-                          }
-                        ></th>
-                        <th
-                          className={
-                            "px-6 align-middle text-center border border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
-                          }
-                        ></th>
                       </tr>
                     </thead>
 
@@ -275,6 +268,8 @@ export default function Artists() {
                                       id={key}
                                       editClick={editArtist}
                                       clickOpen={handleClickOpen}
+                                      Name={d.name}
+                                      Email={d.email}
                                       address={d.address}
                                       whiteListedOrNot={whiteLister[key]}
                                       setLoading={setLoadingFunction}

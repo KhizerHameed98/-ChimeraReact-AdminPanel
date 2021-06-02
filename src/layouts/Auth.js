@@ -34,7 +34,8 @@ export default function Auth() {
   }, [window.ethereum]);
   async function metamaskConnect() {
     if (!window.ethereum) {
-      alert("metamask not installed!!!!");
+      await alert("metamask not installed!!!!");
+      history.push("/");
     } else {
       web3 = new Web3(window.ethereum);
       web3.eth.getAccounts(function (err, accounts) {
