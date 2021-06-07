@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/-ChimeraReact-AdminPanel/static/css/main.7d4b5037.chunk.css",
+    "main.js": "/-ChimeraReact-AdminPanel/static/js/main.63c626fa.chunk.js",
+    "main.js.map": "/-ChimeraReact-AdminPanel/static/js/main.63c626fa.chunk.js.map",
+    "runtime-main.js": "/-ChimeraReact-AdminPanel/static/js/runtime-main.7cb4e82f.js",
+    "runtime-main.js.map": "/-ChimeraReact-AdminPanel/static/js/runtime-main.7cb4e82f.js.map",
+    "static/css/2.c90a5203.chunk.css": "/-ChimeraReact-AdminPanel/static/css/2.c90a5203.chunk.css",
+    "static/js/2.ad51503a.chunk.js": "/-ChimeraReact-AdminPanel/static/js/2.ad51503a.chunk.js",
+    "static/js/2.ad51503a.chunk.js.map": "/-ChimeraReact-AdminPanel/static/js/2.ad51503a.chunk.js.map",
+    "index.html": "/-ChimeraReact-AdminPanel/index.html",
+    "static/css/2.c90a5203.chunk.css.map": "/-ChimeraReact-AdminPanel/static/css/2.c90a5203.chunk.css.map",
+    "static/css/main.7d4b5037.chunk.css.map": "/-ChimeraReact-AdminPanel/static/css/main.7d4b5037.chunk.css.map",
+    "static/js/2.ad51503a.chunk.js.LICENSE.txt": "/-ChimeraReact-AdminPanel/static/js/2.ad51503a.chunk.js.LICENSE.txt",
+    "static/media/angular.jpg": "/-ChimeraReact-AdminPanel/static/media/angular.b5045666.jpg",
+    "static/media/bootstrap.jpg": "/-ChimeraReact-AdminPanel/static/media/bootstrap.bd712487.jpg",
+    "static/media/all.min.css": "/-ChimeraReact-AdminPanel/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/github.svg": "/-ChimeraReact-AdminPanel/static/media/github.6c955556.svg",
+    "static/media/google.svg": "/-ChimeraReact-AdminPanel/static/media/google.eae9aa93.svg",
+    "static/media/react.jpg": "/-ChimeraReact-AdminPanel/static/media/react.0e8c9066.jpg",
+    "static/media/register_bg_2.png": "/-ChimeraReact-AdminPanel/static/media/register_bg_2.4f2cb0ac.png",
+    "static/media/sketch.jpg": "/-ChimeraReact-AdminPanel/static/media/sketch.a6af780a.jpg",
+    "static/media/team-1-800x800.jpg": "/-ChimeraReact-AdminPanel/static/media/team-1-800x800.fa5a7ac2.jpg",
+    "static/media/team-2-800x800.jpg": "/-ChimeraReact-AdminPanel/static/media/team-2-800x800.3e08ef14.jpg",
+    "static/media/team-3-800x800.jpg": "/-ChimeraReact-AdminPanel/static/media/team-3-800x800.19201574.jpg",
+    "static/media/team-4-470x470.png": "/-ChimeraReact-AdminPanel/static/media/team-4-470x470.4ef82ef4.png",
+    "static/media/vue.jpg": "/-ChimeraReact-AdminPanel/static/media/vue.43bd93a8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7cb4e82f.js",
+    "static/css/2.c90a5203.chunk.css",
+    "static/js/2.ad51503a.chunk.js",
+    "static/css/main.7d4b5037.chunk.css",
+    "static/js/main.63c626fa.chunk.js"
+  ]
+}
