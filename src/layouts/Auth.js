@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Web3 from "web3";
+import config from "../config.js";
 // components
 
 // views
@@ -30,6 +31,16 @@ export default function Auth() {
           window.location.reload();
         }
       });
+      window.ethereum.on("networkChanged", function (networkId) {
+        if (networkId != config.networkId) {
+          console.log(networkId);
+          localStorage.clear();
+          alert("please Select the correct network");
+          window.location.reload();
+        } else {
+          window.location.reload();
+        }
+      });
     }
   }, [window.ethereum]);
   async function metamaskConnect() {
@@ -38,6 +49,14 @@ export default function Auth() {
       history.push("/");
     } else {
       web3 = new Web3(window.ethereum);
+      web3.eth.net.getId().then(async (netId) => {
+        if (netId != config.networkId) {
+          localStorage.clear();
+          await alert("Please Select  the correct network");
+
+          history.push("/auth/login");
+        }
+      });
       web3.eth.getAccounts(function (err, accounts) {
         if (err !== null) console.error("An error occurred: " + err);
         else if (

@@ -62,11 +62,11 @@ export default function NFTApprovals() {
                 Owner.push(res);
               });
             tokenId.push(token);
-            let res = await axios.get(`http://localhost:5000/file/${token}`);
+            let res = await axios.get(`${config.host}/file/${token}`);
             ImageName.push(res.data[0].name);
             ImageData.push(res.data[0]);
             let OwnerRes = await axios.get(
-              `http://localhost:5000/api/users/${res.data[0].Artist}`
+              `${config.host}/api/users/${res.data[0].Artist}`
             );
             OwnerName.push(OwnerRes.data.name);
           }

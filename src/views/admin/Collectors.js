@@ -59,7 +59,7 @@ export default function Collectors() {
       let promiseArr = [];
       let whiteListedOrNot = [];
       axios
-        .get(`http://localhost:5000/api/auth`)
+        .get(`${config.host}/api/auth`)
         .then(async (res) => {
           let resData = res.data;
           if (res.data.length === 0) {
@@ -177,7 +177,7 @@ export default function Collectors() {
                             "px-6 align-middle border text-center border-solid py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-lightBlue-800 text-white border-lightBlue-700 "
                           }
                         >
-                          WhiteList{" "}
+                          GrantRole{" "}
                         </th>
 
                         <th

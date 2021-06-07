@@ -5,11 +5,12 @@ import config from "../../../config";
 import Web3 from "web3";
 import Swal from "sweetalert2";
 import Loader from "../../../components/Loader/Loader";
+import Loader2 from "../../../components/Loader/Loader2";
+
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SendIcon from "@material-ui/icons/Send";
-import Alarm from "@material-ui/icons/AccessAlarm";
 
 const chimeraContract = require("../../../contracts/Chimera.json");
 const SMAV2Contract = require("../../../contracts/ChimeraMarketAuctionV2.json");
@@ -35,6 +36,7 @@ export default function ArtistEdit() {
   const [validRoyalty, setValidRoyalty] = useState(false);
   const [tokenDescription, setTokenDescription] = useState("");
   const [isTokenCreator, setIsTokenCreator] = useState("");
+  const [loading2, setLoading2] = useState(false);
   async function callData() {
     setLoading(true);
     let NFTData,
@@ -53,6 +55,7 @@ export default function ArtistEdit() {
       let tokenCreator = await STCR.methods
         .tokenCreator(config.Chimera, id)
         .call();
+      console.log(tokenCreator);
       if (tokenCreator === "0x0000000000000000000000000000000000000000") {
         setIsTokenCreator(false);
       } else {
@@ -94,7 +97,27 @@ export default function ArtistEdit() {
     }
   }
 
-  async function deleteToken() {}
+  async function deleteToken() {
+    console.log(chimera);
+
+    try {
+      setLoading(true);
+      let res = await chimera.methods
+        .deleteToken(id)
+        .send({ from: accounts[0] });
+
+      let del = await axios.delete(`http://localhost:5000/delete/${id}`);
+      history.push("/admin/nftApprovals");
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong",
+      });
+    }
+  }
   async function approveToken() {
     setLoading(true);
     try {
@@ -117,23 +140,27 @@ export default function ArtistEdit() {
     }
   }
   async function SetRoyaltyFee() {
+    setLoading2(true);
     if (royalty > 80 || royalty < 0) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Royalty Fee must be less than 80 and greater than 0",
       });
+      setLoading2(false);
     } else {
       try {
         let res = await SRR.methods
           .setPercentageForSetERC721TokenRoyalty(config.Chimera, id, royalty)
           .send({ from: accounts[0] });
+        setLoading2(false);
         Swal.fire({
           icon: "success",
 
           text: "Royalty Fees has been set successfully!",
         });
       } catch (error) {
+        setLoading2(false);
         setLoading(false);
         console.log(error);
         Swal.fire({
@@ -340,6 +367,7 @@ export default function ArtistEdit() {
                         rows="4"
                       ></textarea> */}
                           <img
+                            style={{ width: "500px" }}
                             src={nftData.image}
                             className="shadow-2xl rounded-2xl"
                           />
@@ -371,6 +399,7 @@ export default function ArtistEdit() {
                                 </span>
                               </>
                             ) : null}
+
                             <button
                               style={{ backgroundColor: "black" }}
                               className=" mr-4 mt-2 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-12 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
@@ -379,6 +408,11 @@ export default function ArtistEdit() {
                             >
                               Set
                             </button>
+                            {loading2 ? (
+                              <>
+                                <Loader2 />
+                              </>
+                            ) : null}
                           </div>
                         </div>
                         <div className="text-right ">
@@ -393,6 +427,7 @@ export default function ArtistEdit() {
                             color="secondary"
                             className={classes.button}
                             startIcon={<DeleteIcon />}
+                            onClick={deleteToken}
                           >
                             Delete
                           </Button>

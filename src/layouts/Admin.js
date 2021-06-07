@@ -20,12 +20,15 @@ import ArtistEdit from "views/admin/Edit/ArtitsEdit";
 import Maps from "views/admin/Maps.js";
 import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
-import { backgroundColor } from "tailwindcss/defaultTheme";
+import config from "../config";
 let web3, accounts;
 export default function Admin() {
   const history = useHistory();
 
   useEffect(() => {
+    if (!localStorage.getItem("walletAddress")) {
+      history.push("/auth");
+    }
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", async function (accounts) {
         // document.location.reload();
@@ -41,6 +44,16 @@ export default function Admin() {
           window.location.reload();
         }
       });
+      window.ethereum.on("networkChanged", function (networkId) {
+        if (networkId != config.networkId) {
+          console.log(networkId);
+          localStorage.clear();
+          alert("please Select the correct network");
+          window.location.reload();
+        } else {
+          window.location.reload();
+        }
+      });
     }
   }, [window.ethereum]);
   const metamaskConnect = async () => {
@@ -50,6 +63,14 @@ export default function Admin() {
     } else {
       web3 = new Web3(window.ethereum);
       accounts = await web3.eth.getAccounts();
+      web3.eth.net.getId().then(async (netId) => {
+        if (netId != config.networkId) {
+          localStorage.clear();
+          await alert("Please Select the correct network");
+
+          history.push("/auth");
+        }
+      });
       web3.eth.getAccounts(function (err, accounts) {
         if (err !== null) console.error("An error occurred: " + err);
         else if (

@@ -61,7 +61,7 @@ export default function Artists() {
       let whiteListedOrNot = [];
       let noOfNft = [];
       axios
-        .get(`http://localhost:5000/api/auth`)
+        .get(`${config.host}/api/auth`)
         .then(async (res) => {
           let resData = res.data;
           if (res.data.length === 0) {
@@ -226,43 +226,8 @@ export default function Artists() {
                                       {JSON.stringify(whiteLister[key])}
                                     </span>
                                   </td>
+                                  <td className="border-t-0 text-center  px-6 align-middle border-l-0 border-r-0 text-sm font-bold whitespace-nowrap p-4"></td>
 
-                                  <td className="border-t-0 text-center  px-6 align-middle border-l-0 border-r-0 text-sm font-bold whitespace-nowrap p-4">
-                                    <div>
-                                      <Dialog
-                                        fullScreen={fullScreen}
-                                        open={open}
-                                        onClose={handleClose}
-                                        aria-labelledby="responsive-dialog-title"
-                                      >
-                                        <DialogTitle id="responsive-dialog-title">
-                                          {"Artist Details"}
-                                        </DialogTitle>
-                                        <DialogContent>
-                                          <DialogContentText>
-                                            <div>
-                                              <ul className="d-flex flex-col">
-                                                <li>Name : {d.name}</li>
-                                                <li>Email: {d.email}</li>
-                                                <li>
-                                                  Wallet Address : {d.address}
-                                                </li>
-                                              </ul>
-                                            </div>
-                                          </DialogContentText>
-                                        </DialogContent>
-                                        <DialogActions>
-                                          <Button
-                                            autoFocus
-                                            onClick={handleClose}
-                                            color="primary"
-                                          >
-                                            Ok
-                                          </Button>
-                                        </DialogActions>
-                                      </Dialog>
-                                    </div>
-                                  </td>
                                   <td>
                                     <TableDropdown
                                       id={key}

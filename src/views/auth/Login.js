@@ -15,20 +15,31 @@ export default function Login() {
     } else {
       web3 = new Web3(window.ethereum);
       await window.ethereum.enable();
-      let acc = await web3.eth.getAccounts();
-      console.log("accounts=>>>>>", acc);
-      console.log("accounts=>>>>>", config.adminAccount);
+      web3.eth.net.getId().then(async (netId) => {
+        if (netId != config.networkId) {
+          localStorage.clear();
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "You are not in the correct network",
+          });
+        } else {
+          let acc = await web3.eth.getAccounts();
+          console.log("accounts=>>>>>", acc);
+          console.log("accounts=>>>>>", config.adminAccount);
 
-      if (acc[0] === config.adminAccount) {
-        localStorage.setItem("walletAddress", acc);
-        history.push("/admin");
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Please login with the admin address",
-        });
-      }
+          if (acc[0] === config.adminAccount) {
+            localStorage.setItem("walletAddress", acc);
+            history.push("/admin");
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Please login with the admin address",
+            });
+          }
+        }
+      });
     }
   }
   return (
